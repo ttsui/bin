@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_GB]=/home/tony/Applications/eclipse/icon.xpm
+Name[en_GB]=Eclipse
+Exec=/home/tony/Applications/bin/eclipse
+Name=Eclipse
+Icon=/home/tony/Applications/eclipse/icon.xpm

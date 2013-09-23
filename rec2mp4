@@ -1,0 +1,23 @@
+#!/bin/bash
+
+FILES=$1
+CUR_DIR=`pwd`
+TEMP_DIR=${CUR_DIR}/temp/
+OUTPUT_DIR=${CUR_DIR}/iPhone/
+
+if [ ! -e "$OUTPUT_DIR" ]; then
+	mkdir -p "$OUTPUT_DIR"
+fi
+
+while read REC;
+do
+	MP4=${REC%%.rec}.mp4
+	if [ -a "$OUTPUT_DIR/$MP4" ]; then
+		echo $MP4 already exists
+		continue
+	fi
+
+	/local/Applications/podencoder/podencoder.sh -s "$TEMP_DIR" -o "$OUTPUT_DIR" "$REC"
+
+	mv "$OUTPUT_DIR/${REC}.mp4" "$OUTPUT_DIR/$MP4"
+done < $FILES

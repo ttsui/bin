@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec /local/Applications/java/bin/java -jar /local/Applications/projectx/ProjectX.jar

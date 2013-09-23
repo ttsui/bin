@@ -1,0 +1,12 @@
+#!/bin/bash
+
+case $1 in
+	start)
+		/etc/init.d/smb  start
+		/etc/init.d/iptables  stop
+		;;
+	stop)
+		/etc/init.d/smb  stop
+		/etc/init.d/iptables  start
+		;;
+esac
