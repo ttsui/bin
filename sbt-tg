@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export SBT_OPTS="-Dsbt.repository.config=/etc/sbt/repositories -Dsbt.override.build.repos=true"
+$HOME/Applications/bin/sbt-extras.sh -sbt-launch-repo "http://repo.youdevise.com/nexus/content/groups/public" "$@"
+

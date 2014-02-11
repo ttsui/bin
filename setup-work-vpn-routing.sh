@@ -5,6 +5,7 @@ VPN_IP=`ifconfig ppp0 | grep inet | awk '{ print $2 }'`
 
 for NETWORK in $VPN_NETWORKS; do
   route add -net $NETWORK netmask 255.255.0.0 gw $VPN_IP dev ppp0
+  echo 'search youdevise.com' >> /etc/resolv.conf
 done
 
 
