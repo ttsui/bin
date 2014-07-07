@@ -5,7 +5,6 @@ VPN_NETWORKS="10.107.0.0/16
 10.118.0.0/16
 10.208.0.0/16
 172.16.0.0/16 
-212.111.36/29
 212.111.36.8/29
 212.111.36.128/27
 212.111.36.129/32 
@@ -17,7 +16,7 @@ VPN_NETWORKS="10.107.0.0/16
 VPN_IP=`ifconfig ppp0 | grep inet | awk '{ print $2 }'`
 
 for NETWORK in $VPN_NETWORKS; do
-  echo sudo route add -net $NETWORK gw $VPN_IP dev ppp0
+  sudo route add -net $NETWORK gw $VPN_IP dev ppp0
 done
 
 echo 'search youdevise.com' >> /etc/resolv.conf
