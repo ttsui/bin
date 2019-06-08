@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ls -lR | awk '{ print $5 " " $6 " " $7 " " $8 " "$9}'
+ls -lR | gawk 'match($0, /staff(.*)/, a) {print a[1]}'
