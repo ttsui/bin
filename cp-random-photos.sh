@@ -2,6 +2,11 @@
 
 set -e
 
+if [ $# -ne 2 ]; then
+  echo "Usage: `basename $0` LIST_OF_FILES.txt DEST"
+  exit 0
+fi
+
 ALL_FILES=$1
 DEST=$2
 
